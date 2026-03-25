@@ -1,0 +1,47 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+<ribbon>
+<tabs>
+<tab id="TextBalanceTab" label="TextBalance" keytip=",">
+<!--  MAIN  -->
+<group id="Main" label="Main">
+<button id="RefreshBtn" label="Refresh" size="large" imageMso="Refresh" onAction="TextBalance" keytip="," screentip="Update character counts and progress bars" supertip="Analyzes your document structure and displays character counts with visual progress bars. Green = within optimal range, Orange = approaching limits, Red = exceeds target length. Works with any document size from sermons to dissertations."/>
+<toggleButton id="DisplayMode" label="Speech Time" size="large"
+    onAction="ToggleDisplayMode"
+    imageMso="StartTimer"
+    getPressed="GetDisplayModeState"
+    keytip="S"
+    screentip="Toggle between character count and speech time display"
+    supertip="Switch between showing raw character counts or estimated speech/reading time. Speech time is calculated based on your personal reading tempo (adjustable with Set Tempo button). Useful for presentations, sermons, and timed content."/>
+<button id="SetTempoBtn" label="Set Tempo" size="large" imageMso="AccountSettings"
+    onAction="SetSpeechTempo"
+    keytip="D"
+    screentip="Configure your reading tempo"
+    supertip="Set your personal reading speed to get accurate speech time estimates. Default is 180 characters per minute. Automatically enables Speech Time mode when configured."/>
+<toggleButton id="AutoSaveToggle" label="AutoSave" size="large"
+    onAction="ToggleAutoSave"
+    imageMso="FileSave"
+    getPressed="GetDisplayModeState"
+    keytip="A"
+    screentip="Toggle automatic document saving"
+    supertip="When enabled, TextBalance automatically saves your document after each update."/>
+</group>
+<!--  TOOLS  -->
+<group id="Tools" label="Remove">
+<button id="EverythingBtn" label="Everything" size="large" imageMso="Delete" onAction="TextBalanceRemove" keytip="E" screentip="Remove all TextBalance data from this document" supertip="Completely removes the summary table, all heading annotations, progress bars, and stored settings from the current document. The TextBalance add-in remains installed and available for other documents."/>
+<button id="AnnotationsBtn" label="Annotations" size="large" imageMso="ReviewDeleteComment" onAction="AnnotationRemove" keytip="R" screentip="Remove only heading annotations and progress bars" supertip="Removes all visual indicators (character counts, percentages, and progress bars) from headings while preserving the summary table and its data. Quick way to clean up headings for final document presentation."/>
+<button id="TableBtn" label="Table" size="large" imageMso="TableDelete" onAction="TableRemove" keytip="T" screentip="Remove only the summary table" supertip="Removes the character count summary table while keeping all heading annotations and progress bars intact. Use this if you want to keep visual indicators but remove the detailed breakdown table."/>
+</group>
+<!--  NEW HELP GROUP TentativeAcceptInvitation  -->
+<group id="Help" label="Help">
+<button id="FirstStepsBtn" label="Help" size="large" imageMso="ContextHelp" onAction="HelpButton" screentip="Learn the basics of using TextBalance" supertip="Get started with headings, document structure, and CharCounter basics."/>
+</group>
+    <!--  SUPPORT GROUP HappyFace Piggy FieldsUpdate HighImportance-->
+<group id="Support" label="Feedback">
+<button id="FeedbackBtn" label="Report an issue" size="large" imageMso="ControlToolboxOutlook" onAction="OpenFeedbackPage" keytip="F" screentip="Report a bug or an issue" supertip="Open the feedback page in your browser to share suggestions, bug reports, or comments about TextBalance."/>
+<button id="BuyMeCoffeeBtn" label="Support" size="large" imageMso="Piggy" onAction="OpenBuyMeACoffee" keytip="B" screentip="Support the developer" supertip="If you find TextBalance useful, consider buying the developer a hot chocolate (he doesn't like coffee). Thank you for your support!"/>
+<button id="CheckForUpdatesBtn" label="Check for updates" size="large" imageMso="GroupSynchronizeWithSite" onAction="CheckForUpdatesButton" keytip="U" screentip="Check for the latest version of TextBalance" supertip="Checks if a newer version of TextBalance is available and prompts you to update if one is found."/>
+</group>
+</tab>
+</tabs>
+</ribbon>
+</customUI>
